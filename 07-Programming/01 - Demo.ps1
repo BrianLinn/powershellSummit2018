@@ -21,15 +21,15 @@ function Get-BeardXPS {
     Write-Host "Number Of Logical Processors is $($computerInfo.NumberOfLogicalProcessors)"
 }
 
-Get-BeardXPS -VMName ROB-XPS
-
+Get-BeardXPS -VMName CEA1513
+#Install-Module dbatools -Scope CurrentUser
 # but the beauty of PowerShell is objects and 
 
-Get-BeardXPS -VMName ROB-XPS | ConvertTo-Csv
-Get-BeardXPS -VMName ROB-XPS | ConvertTo-Json
-Get-BeardXPS -VMName ROB-XPS | ConvertTo-Xml
+Get-BeardXPS -VMName CEA1513 | ConvertTo-Csv
+Get-BeardXPS -VMName CEA1513 | ConvertTo-Json
+Get-BeardXPS -VMName CEA1513 | ConvertTo-Xml
 
-Get-BeardXPS -VMName ROB-XPS | Write-DbaDataTable -SqlInstance $ENV:COMPUTERNAME -Database tempdb -Table CompInfo -AutoCreateTable
+Get-BeardXPS -VMName CEA1513 | Write-DbaDataTable -SqlInstance $ENV:COMPUTERNAME -Database tempdb -Table CompInfo -AutoCreateTable
 
 Invoke-DbaQuery -SqlInstance $ENV:COMPUTERNAME -Database tempdb -Query "SELECT * FROM CompInfo"
 Invoke-DbaQuery -SqlInstance $ENV:COMPUTERNAME -Database tempdb -Query "DROP TABLE CompInfo"
@@ -49,7 +49,7 @@ function Get-BeardXPS {
     Write-Output "Number Of Logical Processors is $($computerInfo.NumberOfLogicalProcessors)"
 }
 
-Get-BeardXPS -VMName ROB-XPS
+Get-BeardXPS -VMName CEA1513
 
 # but
 
@@ -81,21 +81,21 @@ function Get-BeardXPS {
 
 clear
 
-Get-BeardXPS -VMName ROB-XPS
+Get-BeardXPS -VMName CEA1513
 
 clear
 
 # then
 
-Get-BeardXPS -VMName ROB-XPS | ConvertTo-Csv
+Get-BeardXPS -VMName CEA1513 | ConvertTo-Csv
 
 clear
 
-Get-BeardXPS -VMName ROB-XPS | ConvertTo-Json
+Get-BeardXPS -VMName CEA1513 | ConvertTo-Json
 
 clear
 
-Get-BeardXPS -VMName ROB-XPS | ConvertTo-Xml
+Get-BeardXPS -VMName CEA1513 | ConvertTo-Xml
 
 clear
 
