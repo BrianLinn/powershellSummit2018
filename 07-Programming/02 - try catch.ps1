@@ -107,6 +107,6 @@ function CanIaccess {
         Write-PSFHostColor "Failed for a different reason" 
     }
 }
-
+#Install-Module PSFramework -Scope CurrentUser
 CanIaccess -folder C:\temp\LockedDownBackUp
 CanIaccess -folder C:\temp\NotThere
